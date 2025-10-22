@@ -47,4 +47,7 @@ def main(board):
         if counter == 9:
             print("Ничья!")
             break
-    draw_board(board)       
+    draw_board(board)    
+main(board)
+
+input("Нажмите Enter для завершения игры!")   
