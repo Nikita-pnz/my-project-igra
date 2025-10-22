@@ -27,4 +27,24 @@ def check_win(board):
     for each in win_coord:
         if board[each[0]] == board[each[1]] == board[each[2]]:
             return board[each[0]]
-    return False        
+    return False 
+def main(board):
+    counter = 0
+    win = False
+    while not win:
+        draw_board(board)
+        if counter % 2 == 0:
+            take_input("X")
+        else:
+            take_input("O")
+        counter += 1
+
+        tmp = check_win(board)
+        if tmp:
+            print(tmp, "Выиграл!")
+            win = True
+            break
+        if counter == 9:
+            print("Ничья!")
+            break
+    draw_board(board)       
